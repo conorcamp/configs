@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cli=/Applications/Karabiner.app/Contents/Library/bin/karabiner
+
+$cli set private.f192f19_escape 1
+/bin/echo -n .
+$cli set space_cadet.left_control_to_hyper 1
+/bin/echo -n .
+$cli set remap.escape2capslock 1
+/bin/echo -n .
+$cli set caps_lock_to_hyper 1
+/bin/echo -n .
+/bin/echo
