@@ -1,0 +1,57 @@
+# Configuration is split into the following directives:
+ 
+# config (for global configurations)
+ 
+config defaultToCurrentScreen true
+config resizePercentOf screenSize
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+config windowHintsBackgroundColor 96;96;64;0.5
+config windowHintsSpreadPadding 40
+config windowHintsSpreadSearchWidth 80
+config windowHintsSpreadSearchHeight 80
+ 
+# alias (to create alias variables)
+
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+alias hyper ctrl;shift;alt;cmd
+ 
+# key bindings
+ 
+bind l:${hyper} focus right
+bind h:${hyper} focus left
+bind k:${hyper} focus up
+bind j:${hyper} focus down
+ 
+bind w:${hyper} ${topleft}
+bind r:${hyper} ${topright}
+bind s:${hyper} ${lefthalf}
+bind f:${hyper} ${righthalf}
+bind d:${hyper} ${full}
+bind e:${hyper} ${tophalf}
+bind x:${hyper} ${bottomhalf}
+bind z:${hyper} ${bottomleft}
+bind c:${hyper} ${bottomright}
+
+
+bind space:${hyper} hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+bind g:cmd grid padding:5 0:6,2 1:8,3
+
+bind right:${hyper} throw right 
+bind left:${hyper}  throw left  
+bind up:${hyper}    throw up    
+bind down:${hyper}  throw down
+
+
+# Switcher
+bind tab:cmd switch
